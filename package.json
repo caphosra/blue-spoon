@@ -4,7 +4,7 @@
   "description": "This is an application for serving a quiz from the set randomly.",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node index.ts"
+    "start": "npx ts-node index.ts"
   },
   "repository": {
     "type": "git",
