@@ -1,0 +1,28 @@
+{
+  "name": "blue-spoon",
+  "version": "1.0.0",
+  "description": "This is an application for serving a quiz from the set randomly.",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/capra314cabra/blue-spoon.git"
+  },
+  "author": "capra314cabra",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/capra314cabra/blue-spoon/issues"
+  },
+  "homepage": "https://github.com/capra314cabra/blue-spoon",
+  "devDependencies": {
+    "@types/express": "^4.17.12",
+    "ts-node": "^10.0.0",
+    "ts-node-dev": "^1.1.6",
+    "typescript": "^4.3.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
