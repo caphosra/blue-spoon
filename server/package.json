@@ -2,9 +2,9 @@
   "name": "blue-spoon",
   "version": "1.0.0",
   "description": "This is an application for serving a quiz from the set randomly.",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
-    "start": "npx ts-node index.ts"
+    "start": "node ./dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "express": "^4.17.1",
+    "node": "^16.1.0",
     "ts-node": "^10.0.0",
     "typescript": "^4.3.2"
   }
