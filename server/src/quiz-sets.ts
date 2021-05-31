@@ -24,7 +24,7 @@ export class QuizSets {
 
     async add_quiz(id: number, problem: string, answer: string) {
         await this.client
-            .query(`INSERT INTO ${problem} VALUES (${id}, '${problem}', '${answer}', 0, 0);`);
+            .query(`INSERT INTO problems VALUES (${id}, '${problem}', '${answer}', 0, 0);`);
     }
 
     async get_quiz(id: number): Promise<Problems[]> {
