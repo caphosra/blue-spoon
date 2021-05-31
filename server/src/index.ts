@@ -1,5 +1,5 @@
 import express from "express";
-import quizSets from "./quiz-sets";
+import problemsSQLDataBase from "./sql-db";
 
 const app = express();
 
@@ -10,18 +10,14 @@ app.use(express.urlencoded({ extended: true }));
 
 const router = express.Router();
 
-router.get('/', async (req, res) => {
-    if (req.query.id) {
-        let id = parseInt(req.query.id as string);
-        let quiz = await quizSets.get_quiz(id);
-        let result = quiz
-            .map((val) => `${val.ProblemText}, ${val.AnswerText}`)
-            .join("\n");
-        res.send(result);
-    }
-    else {
-        res.send("Please give me an id.")
-    }
+router.get('/', (_, res) => {
+    problemsSQLDataBase.add_problem({ id: 0, bookID: 0, problemText: "'Flash'", answerText: "'Star'", correct: 0, wrong: 0 })
+        .then(() => {
+            res.send("Hello World");
+        })
+        .catch((err) => {
+            console.error(err);
+        });
 });
 
 app.use(router);
