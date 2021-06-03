@@ -21,4 +21,9 @@ router.get('/', (_, res) => {
 });
 
 app.use(router);
+
+app.use((_, res) => {
+    res.redirect("/");
+});
+
 app.listen(PORT, () => console.log(`Listening on ${PORT}`));
