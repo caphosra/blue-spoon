@@ -17,11 +17,7 @@ router.get('/', (_, res) => {
 router.get("/problems/get", (req, res) => {
     problemsDataBase.get_problem(null)
         .then((problems) => {
-            let text = "";
-            for (let problem of problems) {
-                text += problem + "\n";
-            }
-            res.send(text);
+            res.send(JSON.stringify(problems));
         })
         .catch((err) => {
             console.error(err);
