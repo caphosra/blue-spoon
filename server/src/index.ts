@@ -11,9 +11,17 @@ app.use(express.urlencoded({ extended: true }));
 const router = express.Router();
 
 router.get('/', (_, res) => {
-    problemsDataBase.add_problem({ id: 0, bookID: 0, problemText: "'Flash'", answerText: "'Star'", correct: 0, wrong: 0 })
-        .then(() => {
-            res.send("Hello World");
+    res.redirect("https://github.com/capra314cabra/blue-spoon");
+});
+
+router.get("/problems/get", (req, res) => {
+    problemsDataBase.get_problem(null)
+        .then((problems) => {
+            let text = "";
+            for (let problem of problems) {
+                text += problem + "\n";
+            }
+            res.send(text);
         })
         .catch((err) => {
             console.error(err);
