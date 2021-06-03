@@ -1,5 +1,5 @@
 import { Client } from "pg";
-import { IProblem, IProblemsDataBase } from "./@types/problems-db";
+import { IProblem, IProblemsDataBase } from "../@types/problems-db";
 
 export class ProblemSQLDataBase implements IProblemsDataBase {
     private client: Client;
@@ -37,6 +37,6 @@ export class ProblemSQLDataBase implements IProblemsDataBase {
     }
 }
 
-let problemsSQLDataBase = new ProblemSQLDataBase() as IProblemsDataBase;
+let problemsDataBase = new ProblemSQLDataBase() as IProblemsDataBase;
 
-export default problemsSQLDataBase;
+export default problemsDataBase;

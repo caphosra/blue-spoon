@@ -1,5 +1,5 @@
 import express from "express";
-import problemsSQLDataBase from "./sql-db";
+import problemsDataBase from "./sql/problems-db";
 
 const app = express();
 
@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 const router = express.Router();
 
 router.get('/', (_, res) => {
-    problemsSQLDataBase.add_problem({ id: 0, bookID: 0, problemText: "'Flash'", answerText: "'Star'", correct: 0, wrong: 0 })
+    problemsDataBase.add_problem({ id: 0, bookID: 0, problemText: "'Flash'", answerText: "'Star'", correct: 0, wrong: 0 })
         .then(() => {
             res.send("Hello World");
         })
